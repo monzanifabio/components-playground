@@ -1,0 +1,321 @@
+:root {
+  --toast-header-gap: 16px;
+  --toast-edge-gap: 24px;
+
+  /* Figma Alert Design Tokens - Light */
+  --alert-neutral-bg: #f4f4f4;
+  --alert-neutral-border: #e0e0e0;
+  --alert-neutral-text: #262626;
+
+  /* Figma Button Tokens - Light */
+  --btn-default-primary-bg: #c52083;
+  --btn-default-primary-border: #c52083;
+  --btn-default-primary-text: #fefefe;
+
+  --btn-default-secondary-border: #393939;
+  --btn-default-secondary-text: #393939;
+}
+
+:root[data-theme="dark"] {
+  /* Figma Alert Design Tokens - Dark */
+  --alert-neutral-bg: #1f212a;
+  --alert-neutral-border: #353846;
+  --alert-neutral-text: #e5e7eb;
+
+  /* Figma Button Tokens - Dark */
+  --btn-default-primary-bg: #d83d9c;
+  --btn-default-primary-border: #d83d9c;
+  --btn-default-primary-text: #ffffff;
+
+  --btn-default-secondary-border: #9ca3af;
+  --btn-default-secondary-text: #e5e7eb;
+}
+
+.show-alert-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  border-radius: 6px;
+  border: 1px solid var(--btn-default-primary-border);
+  background: var(--btn-default-primary-bg);
+  color: var(--btn-default-primary-text);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.show-alert-btn:hover {
+  filter: brightness(1.08);
+}
+
+.show-alert-btn:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.toast-stack {
+  position: fixed;
+  z-index: 10;
+  top: calc(var(--navbar-height) + var(--toast-header-gap));
+  right: var(--toast-edge-gap);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: min(450px, calc(100vw - (2 * var(--toast-edge-gap))));
+  max-height: calc(100vh - 100px);
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   FIGMA ALERT COMPONENT (Node 16595:3111)
+   ========================================================================== */
+
+/* Alert Root Box Model */
+.alert {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px; /* var(--size/8, 8px) */
+  padding: 12px; /* var(--size/12, 12px) */
+  border-radius: 8px; /* var(--radius/radius-8, 8px) */
+  border: 1px solid;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-shadow: none;
+  pointer-events: auto;
+  transition:
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.25s ease,
+    max-height 0.25s ease,
+    margin 0.25s ease,
+    padding 0.25s ease;
+  animation: alertFadeIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: transform, opacity;
+}
+
+.alert.alert-exiting {
+  animation: alertDismiss 320ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.alert.alert-overflow-exiting {
+  animation: alertOverflowDismiss 320ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Alert Icon: 20x20px */
+.alert-icon-wrapper {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert-icon-wrapper img,
+.alert-icon-wrapper svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+/* Main Content Container */
+.alert-main-content {
+  flex: 1 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* var(--size/12, 12px) */
+  align-items: flex-start;
+  min-width: 0;
+}
+
+/* Text Container */
+.alert-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  width: 100%;
+  word-break: break-word;
+}
+
+.alert-title {
+  font-family: var(--font-sans);
+  font-weight: 600; /* Text SM/Semibold */
+  font-size: 14px;
+  line-height: 20px;
+  margin: 0;
+  width: 100%;
+}
+
+.alert-description {
+  font-family: var(--font-sans);
+  font-weight: 500; /* Text SM/Medium */
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+  width: 100%;
+}
+
+/* Actions Container */
+.alert-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px; /* var(--spacing/sm, 8px) */
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Figma Button Component (Size: xs) */
+.alert-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; /* var(--components/button/gap, 8px) */
+  min-height: 24px;
+  padding: 2px 8px; /* px: 8px, py: 2px */
+  border-radius: 4px; /* var(--components/button/radius, 4px) */
+  border-width: 1px;
+  border-style: solid;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500; /* Medium */
+  line-height: 18px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+  background: transparent;
+}
+
+.alert-btn:hover {
+  filter: brightness(1.08);
+}
+
+.alert-btn:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+/* Dismiss / Close Button */
+.alert-close-btn {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  max-width: 18px;
+  max-height: 18px;
+  min-width: 18px;
+  min-height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.8;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+}
+
+.alert-close-btn img,
+.alert-close-btn svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.alert-close-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.alert-close-btn:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ==========================================================================
+   ALERT TYPE VARIANTS
+   ========================================================================== */
+
+/* Neutral */
+.alert-neutral {
+  background: var(--alert-neutral-bg);
+  border-color: var(--alert-neutral-border);
+  color: var(--alert-neutral-text);
+}
+.alert-neutral .alert-btn-primary {
+  background: var(--btn-default-primary-bg);
+  border-color: var(--btn-default-primary-border);
+  color: var(--btn-default-primary-text);
+}
+.alert-neutral .alert-btn-secondary {
+  border-color: var(--btn-default-secondary-border);
+  color: var(--btn-default-secondary-text);
+  background: transparent;
+}
+
+/* ==========================================================================
+   ANIMATIONS & RESPONSIVE
+   ========================================================================== */
+
+@keyframes alertFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(calc(0px - var(--navbar-height) - var(--toast-header-gap))) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes alertDismiss {
+  0% {
+    opacity: var(--alert-exit-start-opacity, 1);
+    transform: var(--alert-exit-start-transform, scale(1));
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes alertOverflowDismiss {
+  0% {
+    opacity: var(--alert-exit-start-opacity, 1);
+    transform: var(--alert-exit-start-transform, translateY(0) scale(1));
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(24px) scale(0.8);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --toast-edge-gap: 16px;
+  }
+
+  .toast-stack {
+    width: min(450px, calc(100vw - (2 * var(--toast-edge-gap))));
+    max-height: calc(100vh - 96px);
+  }
+
+  .alert {
+    width: 100%;
+  }
+}

@@ -1,0 +1,73 @@
+:root {
+  /* Surface colors */
+  --color-bg: #ffffff;
+  --color-surface: #f8f7f4;
+  --color-border: #e5e4e7;
+
+  /* Text colors */
+  --color-text: #525252;
+  --color-text-heading: #141414;
+
+  /* Accent */
+  --color-accent: #aa3bff;
+  --color-accent-subtle: rgba(170, 59, 255, 0.1);
+
+  /* Chart palette */
+  --chart-1: #a56ffe;
+  --chart-2: #2b94da;
+  --chart-3: #fea048;
+  --chart-4: #490e03;
+  --chart-5: #ec89c8;
+  --chart-6: #005c5c;
+  --chart-7: #25a240;
+  --chart-8: #92165d;
+  --chart-9: #0ebeb9;
+  --chart-10: #02182b;
+  --chart-11: #3131e3;
+  --chart-12: #fa4838;
+  --chart-13: #d4bbff;
+  --chart-14: #dfae02;
+  --chart-15: #044315;
+  --chart-16: #91a3fd;
+
+  /* Spacing scale */
+  --space-xs: 4px;
+  --space-s: 8px;
+  --space-m: 16px;
+  --space-l: 24px;
+  --space-xl: 40px;
+  --space-2xl: 64px;
+
+  /* Border radii */
+  --radius-s: 4px;
+  --radius-m: 8px;
+  --radius-l: 16px;
+}
+
+/* Manual dark mode override via data-theme attribute */
+:root[data-theme="dark"] {
+  --color-bg: #16171d;
+  --color-surface: #1f2028;
+  --color-border: #2e303a;
+  --color-text: #8d8d8d;
+  --color-text-heading: #fafafa;
+  --color-accent: #c084fc;
+  --color-accent-subtle: rgba(192, 132, 252, 0.15);
+
+  --chart-1: #a56ffe;
+  --chart-2: #80d0ff;
+  --chart-3: #fea048;
+  --chart-4: #fdd5d3;
+  --chart-5: #ec89c8;
+  --chart-6: #037c78;
+  --chart-7: #88dd97;
+  --chart-8: #c52083;
+  --chart-9: #0ebeb8;
+  --chart-10: #2b94da;
+  --chart-11: #5358f9;
+  --chart-12: #fa4838;
+  --chart-13: #d4bbff;
+  --chart-14: #dfae02;
+  --chart-15: #25a240;
+  --chart-16: #d8e1fd;
+}

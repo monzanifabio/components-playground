@@ -1,0 +1,401 @@
+/*
+ * Shared page template: tokens, nav, page header and demo sections.
+ * Sizes are in px because some component CSS (Tako) changes the root font size.
+ */
+
+:root {
+  --navbar-height: 68px;
+  --page-max-width: 1200px;
+  --page-gutter: 24px;
+
+  --foreground-primary: #080808;
+  --foreground-secondary: #525252;
+  --foreground-muted: #5f5f5f;
+  --surface-primary: #fefefe;
+  --surface-secondary: #f6f6f6;
+  --border-subtle: #e5e5e5;
+  --border-strong: #c6c6c6;
+  --link: #c52083;
+  --focus-ring: #c52083;
+  --font-sans: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --foreground-primary: #f3f4f6;
+  --foreground-secondary: #a1a1aa;
+  --foreground-muted: #a1a1aa;
+  --surface-primary: #171717;
+  --surface-secondary: #1f1f1f;
+  --border-subtle: #3f3f46;
+  --border-strong: #52525b;
+  --link: #f472b6;
+  --focus-ring: #f472b6;
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.pg-body {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--foreground-primary);
+  background: var(--surface-primary);
+  font: 400 14px/20px var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.pg-body :focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.pg-skip-link {
+  position: absolute;
+  z-index: 100;
+  top: 8px;
+  left: 8px;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: var(--surface-primary);
+  background: var(--foreground-primary);
+  font-weight: 600;
+  text-decoration: none;
+  transform: translateY(-200%);
+}
+
+.pg-skip-link:focus {
+  transform: none;
+}
+
+/* Nav */
+
+.pg-nav {
+  display: flex;
+  flex: 0 0 var(--navbar-height);
+  align-items: center;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--surface-primary);
+}
+
+.pg-nav__inner {
+  display: flex;
+  width: 100%;
+  max-width: var(--page-max-width);
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
+}
+
+.pg-nav__brand {
+  color: var(--foreground-primary);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+.pg-nav__brand:hover {
+  color: var(--foreground-primary);
+  text-decoration: underline;
+}
+
+.pg-theme-toggle {
+  min-height: 36px;
+  padding: 7px 14px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  color: var(--foreground-primary);
+  background: transparent;
+  font: 600 13px/20px var(--font-sans);
+  cursor: pointer;
+}
+
+.pg-theme-toggle:hover {
+  background: var(--surface-secondary);
+}
+
+/* Page header */
+
+.pg-page {
+  flex: 1;
+  width: 100%;
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 40px var(--page-gutter) 64px;
+}
+
+.pg-page__header {
+  margin-bottom: 40px;
+}
+
+.pg-page__title {
+  margin: 0;
+  color: var(--foreground-primary);
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: -0.5px;
+}
+
+.pg-page__description,
+.pg-page__description p {
+  max-width: 680px;
+  margin: 8px 0 0;
+  color: var(--foreground-secondary);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.pg-breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 12px;
+  padding: 0;
+  color: var(--foreground-secondary);
+  font-size: 14px;
+  line-height: 20px;
+  list-style: none;
+}
+
+.pg-breadcrumb__list li + li::before {
+  margin-right: 8px;
+  content: "/";
+  color: var(--border-strong);
+}
+
+.pg-breadcrumb__link,
+.pg-breadcrumb__link:visited {
+  color: var(--foreground-secondary);
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+.pg-breadcrumb__link:hover {
+  color: var(--foreground-primary);
+}
+
+.pg-toc__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pg-toc__link,
+.pg-toc__link:visited {
+  display: inline-flex;
+  min-height: 32px;
+  align-items: center;
+  padding: 4px 12px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 16px;
+  color: var(--foreground-primary);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+.pg-toc__link:hover {
+  color: var(--foreground-primary);
+  background: var(--surface-secondary);
+}
+
+/* Demo sections */
+
+.pg-demos {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.pg-demo {
+  scroll-margin-top: 24px;
+}
+
+.pg-demo__header {
+  margin-bottom: 16px;
+}
+
+.pg-demo__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  letter-spacing: -0.3px;
+}
+
+.pg-demo__anchor,
+.pg-demo__anchor:visited,
+.pg-demo__anchor:hover {
+  color: var(--foreground-primary);
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+.pg-demo__anchor:hover::after {
+  margin-left: 8px;
+  content: "#";
+  color: var(--foreground-muted);
+}
+
+.pg-demo__description {
+  max-width: 680px;
+  margin: 4px 0 0;
+  color: var(--foreground-secondary);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.pg-demo__canvas {
+  min-height: 160px;
+  padding: 32px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+}
+
+/* Centres a small component in the canvas. */
+.pg-demo__canvas--center {
+  display: grid;
+  place-items: center;
+}
+
+/* Lets wide components (tables, charts) use the full canvas width. */
+.pg-demo__canvas--fill {
+  min-width: 0;
+}
+
+/* Edge-to-edge content such as an iframe. */
+.pg-demo__canvas--bleed {
+  overflow: hidden;
+  padding: 0;
+}
+
+/* Index */
+
+.pg-index__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.pg-index__total {
+  min-width: 24px;
+  padding: 0 8px;
+  border-radius: 12px;
+  color: var(--foreground-secondary);
+  background: var(--surface-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 24px;
+  text-align: center;
+}
+
+.pg-index__wrapper {
+  overflow-x: auto;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+}
+
+.pg-index__table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.pg-index__table th,
+.pg-index__table td {
+  padding: 16px;
+  border-bottom: 1px solid var(--border-subtle);
+  text-align: left;
+  vertical-align: top;
+}
+
+.pg-index__table thead th {
+  color: var(--foreground-secondary);
+  background: var(--surface-secondary);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.pg-index__table tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.pg-index__table tbody th {
+  width: 200px;
+  font-weight: 600;
+}
+
+.pg-index__table td {
+  color: var(--foreground-secondary);
+}
+
+.pg-index__table .pg-index__count {
+  width: 96px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.pg-index__link,
+.pg-index__link:visited {
+  color: var(--link);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.pg-index__link:hover {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --page-gutter: 16px;
+  }
+
+  .pg-page {
+    padding-top: 24px;
+  }
+
+  .pg-page__title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .pg-demo__canvas {
+    padding: 20px;
+  }
+
+  .pg-index__table tbody th {
+    width: auto;
+  }
+
+  .pg-index__table td:nth-child(2),
+  .pg-index__table th:nth-child(2) {
+    display: none;
+  }
+}

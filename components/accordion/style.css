@@ -1,0 +1,109 @@
+:root {
+  --accordion-hover-bg: #f4f4f4;
+}
+
+:root[data-theme="dark"] {
+  --accordion-hover-bg: #262626;
+}
+
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  align-self: start;
+  gap: 56px;
+  width: min(452px, 100%);
+}
+
+.accordion-item {
+  overflow: clip;
+  border-radius: 4px;
+  background: var(--surface-primary);
+}
+
+.accordion-heading {
+  margin: 0;
+}
+
+.accordion-trigger {
+  display: flex;
+  width: 100%;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 4px;
+  color: var(--foreground-primary);
+  background: var(--surface-primary);
+  font: 400 14px/20px var(--font-sans);
+  text-align: left;
+  cursor: pointer;
+}
+
+.accordion-trigger:hover {
+  background: var(--accordion-hover-bg);
+}
+
+.accordion-trigger:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.accordion-chevron {
+  display: grid;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  place-items: center;
+}
+
+.accordion-chevron::before {
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  content: "";
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 220ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.accordion-trigger[aria-expanded="true"] .accordion-chevron::before {
+  transform: translateY(2px) rotate(225deg);
+}
+
+.accordion-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  color: var(--foreground-primary);
+  font-size: 14px;
+  line-height: 20px;
+  transition: grid-template-rows 220ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.accordion-panel[aria-hidden="false"] {
+  grid-template-rows: 1fr;
+}
+
+.accordion-panel-inner {
+  min-height: 0;
+  overflow: hidden;
+  padding: 0 16px;
+  transition: padding-block 220ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.accordion-panel[aria-hidden="false"] .accordion-panel-inner {
+  padding-block: 12px;
+}
+
+.accordion-panel p {
+  margin: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion-chevron::before,
+  .accordion-panel,
+  .accordion-panel-inner {
+    transition: none;
+  }
+}

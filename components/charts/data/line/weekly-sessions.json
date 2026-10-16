@@ -1,0 +1,7 @@
+{
+  "labels": ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7", "Week 8"],
+  "datasets": [
+    { "label": "Mobile", "data": [120, 145, 130, 165, 190, 210, 195, 240] },
+    { "label": "Desktop", "data": [200, 210, 225, 215, 230, 245, 260, 275] }
+  ]
+}

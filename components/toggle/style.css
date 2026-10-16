@@ -1,0 +1,118 @@
+.toggle-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.toggle-group:has(.toggle:disabled) {
+  cursor: not-allowed;
+}
+
+.toggle-container {
+  display: flex;
+  flex: 0 0 34px;
+  width: 34px;
+  padding: 2px 0;
+}
+
+.toggle {
+  position: relative;
+  appearance: none;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 20px;
+  margin: 0;
+  border: 1px solid #8d8d8d;
+  border-radius: 20px;
+  background: #a8a8a8;
+  cursor: inherit;
+  transition:
+    background-color 140ms cubic-bezier(0.2, 0, 0, 1),
+    border-color 140ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.toggle::before {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 20px;
+  background: #fefefe;
+  box-shadow:
+    0 1px 4px rgba(8, 8, 8, 0.08),
+    0 0 6px rgba(8, 8, 8, 0.06);
+  content: "";
+  transition: translate 200ms cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+
+.toggle:checked {
+  border-color: #e750ad;
+  background: #e750ad;
+}
+
+.toggle:checked::before {
+  translate: 14px 0;
+}
+
+.toggle.is-animating::before {
+  animation: thumb-elongate 200ms cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+
+/* Negative margin keeps the thumb's right edge fixed while it grows left. */
+.toggle:checked.is-animating::before {
+  animation-name: thumb-elongate-checked;
+}
+
+@keyframes thumb-elongate {
+  40% {
+    width: 20px;
+  }
+}
+
+@keyframes thumb-elongate-checked {
+  40% {
+    width: 20px;
+    margin-left: -6px;
+  }
+}
+
+.toggle:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.toggle:disabled {
+  opacity: 0.5;
+}
+
+.toggle-text {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2px;
+  font-weight: 500;
+  line-height: 18px;
+  white-space: nowrap;
+}
+
+.toggle-label {
+  color: var(--foreground-primary);
+  font-size: 14px;
+}
+
+.toggle-supporting-text {
+  color: var(--foreground-secondary);
+  font-size: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toggle,
+  .toggle::before {
+    transition: none;
+  }
+
+  .toggle.is-animating::before {
+    animation: none;
+  }
+}

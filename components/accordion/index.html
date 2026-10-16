@@ -1,0 +1,19 @@
+<demo title="Default" description="A single collapsed item. Click the header to expand it.">
+  <section class="accordion-list" aria-label="Accordion examples">
+    <article class="accordion-item">
+      <h3 class="accordion-heading">
+        <button class="accordion-trigger" id="accordion-trigger-1" type="button" aria-expanded="false" aria-controls="accordion-panel-1">
+          <span>Header title</span>
+          <span class="accordion-chevron" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <section class="accordion-panel" id="accordion-panel-1" aria-labelledby="accordion-trigger-1" aria-hidden="true" inert>
+        <div class="accordion-panel-inner">
+          <p>Content</p>
+        </div>
+      </section>
+    </article>
+  </section>
+</demo>
+
+<script type="module" src="./main.js"></script>

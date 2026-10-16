@@ -1,0 +1,4 @@
+{
+  "labels": ["Organic", "Direct", "Social", "Referral", "Email"],
+  "datasets": [{ "label": "Traffic Sources", "data": [38, 24, 18, 12, 8] }]
+}

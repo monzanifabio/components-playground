@@ -1,0 +1,19 @@
+{
+  "name": "components-playground",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^8.2.0"
+  },
+  "dependencies": {
+    "@krakentech/tako-html": "^4.20.1",
+    "bootstrap": "^5.3.8",
+    "chart.js": "^4.5.1"
+  }
+}

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout Playground</title>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside id="left-panel" class="left-panel border-end" aria-label="Primary navigation">
+        <div class="panel-header">
+          <a class="brand-mark" href="/" aria-label="Orbit home">
+            <span class="brand-mark__icon">O</span>
+            <span class="brand-mark__text">Orbit</span>
+          </a>
+          <button id="left-panel-toggle" class="btn btn-sm btn-outline-secondary panel-toggle" type="button" aria-controls="left-panel" aria-expanded="true" aria-label="Collapse navigation">
+            <span aria-hidden="true">&lt;</span>
+          </button>
+        </div>
+
+        <div class="workspace-switcher dropdown">
+          <button class="btn workspace-button dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="workspace-avatar">AC</span>
+            <span class="workspace-copy"><strong>Acme Co.</strong><small>Product team</small></span>
+          </button>
+          <ul class="dropdown-menu shadow-sm">
+            <li><a class="dropdown-item" href="/workspaces/acme">Acme Co.</a></li>
+            <li><a class="dropdown-item" href="/workspaces/northstar">Northstar Labs</a></li>
+          </ul>
+        </div>
+
+        <nav class="nav flex-column sidebar-nav">
+          <span class="nav-section-label">Workspace</span>
+          <a class="nav-link active" href="/overview"><span class="nav-icon">+</span><span class="nav-label">Overview</span></a>
+          <button id="projects-menu-toggle" class="nav-link submenu-trigger" type="button" aria-controls="projects-panel" aria-expanded="false"><span class="nav-icon">#</span><span class="nav-label">Projects</span><span class="badge text-bg-light ms-auto nav-label">12</span><span class="submenu-chevron nav-label" aria-hidden="true">&gt;</span></button>
+          <a class="nav-link" href="/activity"><span class="nav-icon">*</span><span class="nav-label">Activity</span></a>
+          <span class="nav-section-label mt-4">Manage</span>
+          <a class="nav-link" href="/team"><span class="nav-icon">@</span><span class="nav-label">Team</span></a>
+          <a class="nav-link" href="/reports"><span class="nav-icon">%</span><span class="nav-label">Reports</span></a>
+          <a class="nav-link" href="/settings"><span class="nav-icon">=</span><span class="nav-label">Settings</span></a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="user-avatar">FM</div>
+          <div class="user-copy nav-label"><strong>Fabio Monzani</strong><small>Administrator</small></div>
+          <button class="btn btn-sm btn-link text-secondary nav-label" type="button" aria-label="Open account menu">...</button>
+        </div>
+      </aside>
+
+      <aside id="projects-panel" class="secondary-panel border-end" aria-label="Projects submenu" aria-hidden="true">
+        <div class="secondary-panel__header">
+          <div><span class="eyebrow">Workspace</span><h2>Projects</h2></div>
+          <button id="projects-panel-close" class="btn btn-sm btn-outline-secondary" type="button" aria-label="Close projects submenu">&times;</button>
+        </div>
+        <nav class="secondary-nav" aria-label="Project navigation">
+          <a class="secondary-nav__link active" href="/projects"><span class="secondary-nav__icon">+</span>All projects<span class="badge text-bg-light ms-auto">12</span></a>
+          <a class="secondary-nav__link" href="/projects/recent"><span class="secondary-nav__icon">*</span>Recently viewed</a>
+          <a class="secondary-nav__link" href="/projects/favorites"><span class="secondary-nav__icon">*</span>Favorites</a>
+          <span class="nav-section-label">Collections</span>
+          <a class="secondary-nav__link" href="/projects/design"><span class="collection-dot bg-primary"></span>Design team<span class="badge text-bg-light ms-auto">4</span></a>
+          <a class="secondary-nav__link" href="/projects/engineering"><span class="collection-dot bg-success"></span>Engineering<span class="badge text-bg-light ms-auto">6</span></a>
+          <a class="secondary-nav__link" href="/projects/marketing"><span class="collection-dot bg-warning"></span>Marketing<span class="badge text-bg-light ms-auto">2</span></a>
+        </nav>
+        <a class="secondary-panel__footer" href="/projects">View project directory <span aria-hidden="true">&rarr;</span></a>
+      </aside>
+
+      <main class="main-column">
+        <nav class="navbar top-navbar border-bottom px-4" aria-label="Page navigation">
+          <div class="container-fluid px-0">
+            <div class="d-flex align-items-center gap-3">
+              <button id="mobile-menu-toggle" class="btn btn-outline-secondary d-lg-none" type="button" aria-controls="left-panel" aria-label="Open navigation">Menu</button>
+              <div>
+                <div class="breadcrumb-label">Workspace / Overview</div>
+                <h1 class="page-title">Good morning, Fabio</h1>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <button id="theme-toggle" class="btn btn-light" type="button" aria-label="Switch to dark mode">Dark mode</button>
+              <button class="btn btn-primary" type="button">Create project</button>
+              <div class="user-avatar user-avatar--small">FM</div>
+            </div>
+          </div>
+        </nav>
+
+        <section class="content-area">
+          <div class="content-heading">
+            <div>
+              <p class="eyebrow mb-2">Thursday, September 17, 2026</p>
+              <h2>Overview</h2>
+              <p class="text-secondary mb-0">A clear view of what is happening across your workspace.</p>
+            </div>
+            <button class="btn btn-outline-secondary" type="button">Export report</button>
+          </div>
+
+          <div class="row g-3 mt-4">
+            <div class="col-sm-6 col-xl-3"><div class="metric-card"><span>Active projects</span><strong>24</strong><small class="text-success">+12.5% this month</small></div></div>
+            <div class="col-sm-6 col-xl-3"><div class="metric-card"><span>Open tasks</span><strong>148</strong><small class="text-success">+8.2% this week</small></div></div>
+            <div class="col-sm-6 col-xl-3"><div class="metric-card"><span>Team members</span><strong>36</strong><small class="text-secondary">Across 4 groups</small></div></div>
+            <div class="col-sm-6 col-xl-3"><div class="metric-card"><span>On track</span><strong>87%</strong><small class="text-success">+4.6% this month</small></div></div>
+          </div>
+
+          <div class="dashboard-grid mt-4">
+            <section class="content-panel">
+              <div class="d-flex align-items-center justify-content-between mb-4"><div><h3>Recent activity</h3><p class="text-secondary mb-0">The latest updates from your team.</p></div><a href="/activity" class="link-primary">View all</a></div>
+              <div class="activity-list">
+                <div class="activity-item"><div class="activity-dot bg-primary"></div><div><strong>Launch plan updated</strong><p>Sarah added three tasks to the Q4 launch plan.</p><small>12 minutes ago</small></div></div>
+                <div class="activity-item"><div class="activity-dot bg-success"></div><div><strong>New project created</strong><p>Mobile app redesign was created by Alex Chen.</p><small>48 minutes ago</small></div></div>
+                <div class="activity-item"><div class="activity-dot bg-warning"></div><div><strong>Review requested</strong><p>You were tagged in the onboarding checklist.</p><small>2 hours ago</small></div></div>
+              </div>
+            </section>
+            <section class="content-panel progress-panel"><div class="d-flex justify-content-between align-items-start"><div><h3>Project health</h3><p class="text-secondary">Across all active projects.</p></div><span class="status-pill">Healthy</span></div><div class="progress-summary"><strong>87%</strong><span>of projects are on track</span></div><div class="progress" role="progressbar" aria-label="Project health" aria-valuenow="87" aria-valuemin="0" aria-valuemax="100"><div class="progress-bar" style="width: 87%"></div></div><div class="d-flex justify-content-between mt-3 text-secondary small"><span>21 on track</span><span>3 need attention</span></div></section>
+          </div>
+        </section>
+      </main>
+
+      <aside id="right-panel" class="right-panel border-start is-collapsed" aria-label="Quick details">
+        <div class="right-panel__header"><h2 class="right-panel__title">Details</h2><button id="right-panel-toggle" class="btn btn-sm btn-outline-secondary" type="button" aria-controls="right-panel" aria-expanded="false" aria-label="Expand details panel"><span aria-hidden="true">&gt;</span></button></div>
+        <div class="right-panel__content">
+          <div class="detail-intro"><span class="detail-icon">!</span><div><strong>Workspace pulse</strong><p>Everything is moving smoothly.</p></div></div>
+          <hr />
+          <h3>Upcoming</h3>
+          <div class="upcoming-item"><span class="date-tile">18<span>SEP</span></span><div><strong>Design critique</strong><small>10:00 AM · Studio</small></div></div>
+          <div class="upcoming-item"><span class="date-tile">21<span>SEP</span></span><div><strong>Team retro</strong><small>3:30 PM · Meet</small></div></div>
+          <a href="/calendar" class="link-primary small">See calendar</a>
+        </div>
+      </aside>
+    </div>
+
+    <script type="module" src="./frame.js"></script>
+  </body>
+</html>
