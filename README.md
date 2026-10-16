@@ -56,10 +56,10 @@ The folder is picked up automatically, in dev and in the build.
 
 `<demo>` attributes:
 
-| Attribute     | Description                                                                                  |
-| ------------- | -------------------------------------------------------------------------------------------- |
-| `title`       | Section heading. Also used for the section's anchor link.                                    |
-| `description` | Optional line under the heading.                                                             |
+| Attribute     | Description                                                                                   |
+| ------------- | --------------------------------------------------------------------------------------------- |
+| `title`       | Section heading. Also used for the section's anchor link.                                     |
+| `description` | Optional line under the heading.                                                              |
 | `layout`      | `center` (default) centres the component, `fill` uses the full width, `bleed` has no padding. |
 
 Template styles live in `src/page/page.css`. Their classes start with `pg-` so they don't clash with component CSS.
