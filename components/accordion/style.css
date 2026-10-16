@@ -10,14 +10,24 @@
   display: flex;
   flex-direction: column;
   align-self: start;
-  gap: 56px;
+  gap: 0;
   width: min(452px, 100%);
+}
+
+.accordion-list:has(> .accordion-item ~ .accordion-item) {
+  overflow: clip;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
 }
 
 .accordion-item {
   overflow: clip;
   border-radius: 4px;
   background: var(--surface-primary);
+}
+
+.accordion-list > .accordion-item:not(:last-child) {
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 .accordion-heading {
@@ -43,6 +53,11 @@
 
 .accordion-trigger:hover {
   background: var(--accordion-hover-bg);
+}
+
+.accordion-list:has(> .accordion-item ~ .accordion-item) > .accordion-item,
+.accordion-list:has(> .accordion-item ~ .accordion-item) > .accordion-item > .accordion-heading > .accordion-trigger {
+  border-radius: 0;
 }
 
 .accordion-trigger:focus-visible {

@@ -1,4 +1,4 @@
-<demo title="Default" description="A single collapsed item. Click the header to expand it.">
+<demo title="Collapsible" description="A single collapsed item. Click the header to expand it.">
   <section class="accordion-list" aria-label="Accordion examples">
     <article class="accordion-item">
       <h3 class="accordion-heading">
@@ -10,6 +10,50 @@
       <section class="accordion-panel" id="accordion-panel-1" aria-labelledby="accordion-trigger-1" aria-hidden="true" inert>
         <div class="accordion-panel-inner">
           <p>Content</p>
+        </div>
+      </section>
+    </article>
+  </section>
+</demo>
+
+<demo title="Accordion">
+  <section class="accordion-list" aria-label="Account settings">
+    <article class="accordion-item">
+      <h3 class="accordion-heading">
+        <button class="accordion-trigger" id="account-trigger" type="button" aria-expanded="false" aria-controls="account-panel">
+          <span>Account details</span>
+          <span class="accordion-chevron" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <section class="accordion-panel" id="account-panel" aria-labelledby="account-trigger" aria-hidden="true" inert>
+        <div class="accordion-panel-inner">
+          <p>Manage your name, email address and contact information.</p>
+        </div>
+      </section>
+    </article>
+    <article class="accordion-item">
+      <h3 class="accordion-heading">
+        <button class="accordion-trigger" id="notifications-trigger" type="button" aria-expanded="false" aria-controls="notifications-panel">
+          <span>Notifications</span>
+          <span class="accordion-chevron" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <section class="accordion-panel" id="notifications-panel" aria-labelledby="notifications-trigger" aria-hidden="true" inert>
+        <div class="accordion-panel-inner">
+          <p>Choose which account updates and reminders you receive.</p>
+        </div>
+      </section>
+    </article>
+    <article class="accordion-item">
+      <h3 class="accordion-heading">
+        <button class="accordion-trigger" id="security-trigger" type="button" aria-expanded="false" aria-controls="security-panel">
+          <span>Security</span>
+          <span class="accordion-chevron" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <section class="accordion-panel" id="security-panel" aria-labelledby="security-trigger" aria-hidden="true" inert>
+        <div class="accordion-panel-inner">
+          <p>Review your password and two-factor authentication settings.</p>
         </div>
       </section>
     </article>
