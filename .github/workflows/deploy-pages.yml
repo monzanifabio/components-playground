@@ -33,16 +33,14 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: Build
-        run: |
-          if [[ "${{ github.event.repository.name }}" == *.github.io ]]; then
-            npm run build -- --base=/
-          else
-            npm run build -- --base=/${{ github.event.repository.name }}/
-          fi
-
       - name: Configure Pages
+        id: pages
         uses: actions/configure-pages@v5
+
+      - name: Build
+        run: npm run build -- --base="$PAGES_BASE_PATH/"
+        env:
+          PAGES_BASE_PATH: ${{ steps.pages.outputs.base_path }}
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4

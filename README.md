@@ -82,6 +82,8 @@ Files in `public/` are served from the site root. In JavaScript, build their URL
 
 `.github/workflows/deploy-pages.yml` builds and deploys to GitHub Pages on every push to `main`. The repository needs an `NPM_TOKEN` secret for the private Tako package.
 
+In the repository's **Settings > Pages**, set **Source** to **GitHub Actions**. Add `NPM_TOKEN` under **Settings > Secrets and variables > Actions** with permission to download the private package. You can also deploy manually from the workflow's **Run workflow** button. The build uses the base path from GitHub Pages, including when a custom domain is configured.
+
 ## Table component
 
 See [components/table/README.md](components/table/README.md) for the custom table classes.
