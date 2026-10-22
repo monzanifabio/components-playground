@@ -16,6 +16,27 @@
   </section>
 </demo>
 
+<demo title="Collapsible with icon">
+  <section class="accordion-list" aria-label="Home details">
+    <article class="accordion-item">
+      <h3 class="accordion-heading">
+        <button class="accordion-trigger" id="icon-collapsible-trigger" type="button" aria-expanded="false" aria-controls="icon-collapsible-panel">
+          <span class="accordion-trigger-label">
+            <svg class="accordion-title-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#accordion-home-icon"></use></svg>
+            <span>Home details</span>
+          </span>
+          <span class="accordion-chevron" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <section class="accordion-panel" id="icon-collapsible-panel" aria-labelledby="icon-collapsible-trigger" aria-hidden="true" inert>
+        <div class="accordion-panel-inner">
+          <p>View your home and property details.</p>
+        </div>
+      </section>
+    </article>
+  </section>
+</demo>
+
 <demo title="Accordion">
   <section class="accordion-list" aria-label="Account settings">
     <article class="accordion-item">
@@ -54,6 +75,59 @@
       <section class="accordion-panel" id="security-panel" aria-labelledby="security-trigger" aria-hidden="true" inert>
         <div class="accordion-panel-inner">
           <p>Review your password and two-factor authentication settings.</p>
+        </div>
+      </section>
+    </article>
+  </section>
+</demo>
+
+<demo title="Accordion with icons">
+  <section class="accordion-list" aria-label="Home settings">
+    <article class="accordion-item">
+      <h3 class="accordion-heading">
+        <button class="accordion-trigger" id="icon-account-trigger" type="button" aria-expanded="false" aria-controls="icon-account-panel">
+          <span class="accordion-trigger-label">
+            <svg class="accordion-title-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#accordion-home-icon"></use></svg>
+            <span>Home details</span>
+          </span>
+          <span class="accordion-chevron" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <section class="accordion-panel" id="icon-account-panel" aria-labelledby="icon-account-trigger" aria-hidden="true" inert>
+        <div class="accordion-panel-inner">
+          <p>Manage the address and property information for your home.</p>
+        </div>
+      </section>
+    </article>
+    <article class="accordion-item">
+      <h3 class="accordion-heading">
+        <button class="accordion-trigger" id="icon-access-trigger" type="button" aria-expanded="false" aria-controls="icon-access-panel">
+          <span class="accordion-trigger-label">
+            <svg class="accordion-title-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#accordion-home-icon"></use></svg>
+            <span>Access and sharing</span>
+          </span>
+          <span class="accordion-chevron" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <section class="accordion-panel" id="icon-access-panel" aria-labelledby="icon-access-trigger" aria-hidden="true" inert>
+        <div class="accordion-panel-inner">
+          <p>Choose who can access and manage your home information.</p>
+        </div>
+      </section>
+    </article>
+    <article class="accordion-item">
+      <h3 class="accordion-heading">
+        <button class="accordion-trigger" id="icon-alerts-trigger" type="button" aria-expanded="false" aria-controls="icon-alerts-panel">
+          <span class="accordion-trigger-label">
+            <svg class="accordion-title-icon" viewBox="0 0 16 16" aria-hidden="true"><use href="#accordion-home-icon"></use></svg>
+            <span>Home alerts</span>
+          </span>
+          <span class="accordion-chevron" aria-hidden="true"></span>
+        </button>
+      </h3>
+      <section class="accordion-panel" id="icon-alerts-panel" aria-labelledby="icon-alerts-trigger" aria-hidden="true" inert>
+        <div class="accordion-panel-inner">
+          <p>Review alerts related to your home and property.</p>
         </div>
       </section>
     </article>
@@ -99,5 +173,14 @@
     </article>
   </article>
 </demo>
+
+<svg class="accordion-icon-defs" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="accordion-home-icon" viewBox="0 0 16 16">
+    <path
+      d="M14.4 2.79998H8.79996C8.57996 2.79998 8.39995 2.97998 8.39995 3.19998V4.99748L7.19996 3.95498V3.19998C7.19996 2.31748 7.91746 1.59998 8.79996 1.59998H14.4C15.2825 1.59998 16 2.31748 16 3.19998V12.8C16 13.6825 15.2825 14.4 14.4 14.4H10.2975C10.5425 14.05 10.7075 13.6425 10.77 13.2H14.4C14.62 13.2 14.8 13.02 14.8 12.8V3.19998C14.8 2.97998 14.62 2.79998 14.4 2.79998ZM12 4.39998C12 4.17998 12.18 3.99998 12.4 3.99998H13.2C13.42 3.99998 13.6 4.17998 13.6 4.39998V5.19998C13.6 5.41998 13.42 5.59998 13.2 5.59998H12.4C12.18 5.59998 12 5.41998 12 5.19998V4.39998ZM12.4 6.39998H13.2C13.42 6.39998 13.6 6.57998 13.6 6.79998V7.59998C13.6 7.81998 13.42 7.99998 13.2 7.99998H12.4C12.18 7.99998 12 7.81998 12 7.59998V6.79998C12 6.57998 12.18 6.39998 12.4 6.39998ZM12 9.19998C12 8.97998 12.18 8.79998 12.4 8.79998H13.2C13.42 8.79998 13.6 8.97998 13.6 9.19998V9.99998C13.6 10.22 13.42 10.4 13.2 10.4H12.4C12.18 10.4 12 10.22 12 9.99998V9.19998ZM9.99996 3.99998H10.8C11.02 3.99998 11.2 4.17998 11.2 4.39998V5.19998C11.2 5.41998 11.02 5.59998 10.8 5.59998H9.99996C9.77995 5.59998 9.59996 5.41998 9.59996 5.19998V4.39998C9.59996 4.17998 9.77995 3.99998 9.99996 3.99998ZM5.59246 4.14748L10.1925 8.14748C10.4425 8.36498 10.47 8.74498 10.2525 8.99498C10.085 9.18748 9.82495 9.24748 9.59996 9.16748V12.8C9.59996 13.6825 8.88245 14.4 7.99996 14.4H2.39996C1.51746 14.4 0.799956 13.6825 0.799956 12.8V9.16498C0.574956 9.24498 0.312456 9.18498 0.147456 8.99248C-0.0700441 8.74248 -0.0425441 8.36248 0.207456 8.14498L4.80746 4.14498C5.03246 3.94748 5.36996 3.94748 5.59496 4.14498L5.59246 4.14748ZM8.39995 8.17748L5.19996 5.39498L1.99996 8.17748V12.8C1.99996 13.02 2.17996 13.2 2.39996 13.2H7.99996C8.21996 13.2 8.39995 13.02 8.39995 12.8V8.17748ZM3.99996 8.99998C3.99996 8.66748 4.26746 8.39998 4.59996 8.39998H5.79996C6.13246 8.39998 6.39996 8.66748 6.39996 8.99998V10.2C6.39996 10.5325 6.13246 10.8 5.79996 10.8H4.59996C4.26746 10.8 3.99996 10.5325 3.99996 10.2V8.99998Z"
+      fill="#080808"
+    />
+  </symbol>
+</svg>
 
 <script type="module" src="./main.js"></script>
