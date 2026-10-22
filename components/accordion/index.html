@@ -60,4 +60,44 @@
   </section>
 </demo>
 
+<demo title="Examples" layout="fill">
+  <article class="accordion-example-card">
+    <h3 class="accordion-example-title">Workspace settings</h3>
+    <p class="accordion-example-description">Manage workspace details and notification preferences.</p>
+
+    <article class="accordion-item">
+      <h4 class="accordion-heading">
+        <button class="accordion-trigger" id="workspace-trigger" type="button" aria-expanded="false" aria-controls="workspace-panel">
+          <span>Workspace details</span>
+          <span class="accordion-chevron" aria-hidden="true"></span>
+        </button>
+      </h4>
+      <section class="accordion-panel" id="workspace-panel" aria-labelledby="workspace-trigger" aria-hidden="true" inert>
+        <div class="accordion-panel-inner">
+          <p>Set the workspace name and choose who can access it.</p>
+        </div>
+      </section>
+    </article>
+
+    <article class="accordion-example-card accordion-example-card--nested">
+      <h4 class="accordion-example-title">Notification preferences</h4>
+      <p class="accordion-example-description">Choose which updates reach your inbox.</p>
+
+      <article class="accordion-item">
+        <h5 class="accordion-heading">
+          <button class="accordion-trigger" id="email-trigger" type="button" aria-expanded="false" aria-controls="email-panel">
+            <span>Email notifications</span>
+            <span class="accordion-chevron" aria-hidden="true"></span>
+          </button>
+        </h5>
+        <section class="accordion-panel" id="email-panel" aria-labelledby="email-trigger" aria-hidden="true" inert>
+          <div class="accordion-panel-inner">
+            <p>Choose which updates are sent to your inbox.</p>
+          </div>
+        </section>
+      </article>
+    </article>
+  </article>
+</demo>
+
 <script type="module" src="./main.js"></script>

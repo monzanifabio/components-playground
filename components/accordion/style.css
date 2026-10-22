@@ -14,6 +14,35 @@
   width: min(452px, 100%);
 }
 
+.accordion-example-card {
+  width: min(600px, 100%);
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--surface-primary);
+}
+
+.accordion-example-card--nested {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.accordion-example-title {
+  margin: 0;
+  color: var(--foreground-primary);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+.accordion-example-description {
+  margin: 4px 0 12px;
+  color: var(--foreground-secondary);
+  font-size: 13px;
+  line-height: 19px;
+}
+
 .accordion-list:has(> .accordion-item ~ .accordion-item) {
   overflow: clip;
   border: 1px solid var(--border-subtle);
