@@ -1,0 +1,110 @@
+:root {
+  --breadcrumbs-link-color: #92165e;
+  --breadcrumbs-hover-background: #fdf1f9;
+  --breadcrumbs-active-background: #f8d8ed;
+  --breadcrumbs-focus-ring: #e750ad;
+}
+
+:root[data-theme="dark"] {
+  --breadcrumbs-link-color: var(--link);
+  --breadcrumbs-hover-background: var(--surface-secondary);
+  --breadcrumbs-active-background: #422536;
+  --breadcrumbs-focus-ring: var(--focus-ring);
+}
+
+.breadcrumbs {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.breadcrumbs__list {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.breadcrumbs__item {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+}
+
+.breadcrumbs__item + .breadcrumbs__item::before {
+  margin: 0 4px;
+  color: var(--foreground-muted);
+  content: "/";
+  font-weight: 500;
+}
+
+.breadcrumbs__link,
+.breadcrumbs__current {
+  display: inline-flex;
+  max-width: 150px;
+  min-height: 24px;
+  align-items: center;
+  overflow: hidden;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.breadcrumbs__link,
+.breadcrumbs__link:visited {
+  color: var(--breadcrumbs-link-color);
+  text-decoration: none;
+}
+
+.breadcrumbs__link:hover,
+.breadcrumbs__link[data-state="hover"] {
+  color: var(--breadcrumbs-link-color);
+  background: var(--breadcrumbs-hover-background);
+}
+
+.breadcrumbs__link:active,
+.breadcrumbs__link[data-state="active"] {
+  color: var(--breadcrumbs-link-color);
+  background: var(--breadcrumbs-active-background);
+}
+
+.breadcrumbs__link:focus-visible {
+  outline: 2px solid var(--breadcrumbs-focus-ring);
+  outline-offset: 2px;
+}
+
+.breadcrumbs__current {
+  padding-right: 4px;
+  padding-left: 4px;
+  color: var(--foreground-secondary);
+}
+
+.breadcrumbs__state-list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.breadcrumbs__state-row {
+  display: flex;
+  min-height: 32px;
+  align-items: center;
+  gap: 8px;
+}
+
+.breadcrumbs__state-label {
+  width: 52px;
+  color: var(--foreground-secondary);
+  font-size: 12px;
+  line-height: 18px;
+}

@@ -1,0 +1,33 @@
+<demo title="Breadcrumbs" description="A linked path through a page hierarchy, with the current page shown as plain text.">
+  <nav class="breadcrumbs" aria-label="Breadcrumb">
+    <ol class="breadcrumbs__list">
+      <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="/">Projects</a></li>
+      <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../layout/">Atlas</a></li>
+      <li class="breadcrumbs__item"><a class="breadcrumbs__link" href="../table/">Settings</a></li>
+      <li class="breadcrumbs__item"><span class="breadcrumbs__current" aria-current="page">Permissions</span></li>
+    </ol>
+  </nav>
+</demo>
+
+<script type="module" src="./main.js"></script>
+
+<demo title="Item states" description="Ancestor links respond to hover, press, and keyboard focus; the current page is not linked.">
+  <ul class="breadcrumbs__state-list" aria-label="Breadcrumb item states">
+    <li class="breadcrumbs__state-row">
+      <span class="breadcrumbs__state-label">Default</span>
+      <a class="breadcrumbs__link" href="/">Breadcrumb label</a>
+    </li>
+    <li class="breadcrumbs__state-row">
+      <span class="breadcrumbs__state-label">Hover</span>
+      <a class="breadcrumbs__link" data-state="hover" href="/">Breadcrumb label</a>
+    </li>
+    <li class="breadcrumbs__state-row">
+      <span class="breadcrumbs__state-label">Active</span>
+      <a class="breadcrumbs__link" data-state="active" href="/">Breadcrumb label</a>
+    </li>
+    <li class="breadcrumbs__state-row">
+      <span class="breadcrumbs__state-label">Current</span>
+      <span class="breadcrumbs__current">Breadcrumb label</span>
+    </li>
+  </ul>
+</demo>
