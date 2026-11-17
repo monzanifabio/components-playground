@@ -1,0 +1,74 @@
+<demo title="Placements" description="Twelve arrow placements: top, bottom, left, and right, each aligned to the start, center, or end." layout="fill">
+  <ul class="tooltip-placement-grid" aria-label="Tooltip arrow placements">
+    <li class="tooltip-placement">
+      <div class="tooltip-preview" data-side="top" data-align="start"><div class="tooltip-preview__bubble">This is the tooltip body text and it can span across multiple lines</div><span class="tooltip-preview__arrow"><img src="/assets/tooltip-arrow-bottom.svg" alt="" /></span></div>
+      <span class="tooltip-placement__label">Top start</span>
+    </li>
+    <li class="tooltip-placement">
+      <div class="tooltip-preview" data-side="top" data-align="center"><div class="tooltip-preview__bubble">This is the tooltip body text and it can span across multiple lines</div><span class="tooltip-preview__arrow"><img src="/assets/tooltip-arrow-bottom.svg" alt="" /></span></div>
+      <span class="tooltip-placement__label">Top center</span>
+    </li>
+    <li class="tooltip-placement">
+      <div class="tooltip-preview" data-side="top" data-align="end"><div class="tooltip-preview__bubble">This is the tooltip body text and it can span across multiple lines</div><span class="tooltip-preview__arrow"><img src="/assets/tooltip-arrow-bottom.svg" alt="" /></span></div>
+      <span class="tooltip-placement__label">Top end</span>
+    </li>
+    <li class="tooltip-placement">
+      <div class="tooltip-preview" data-side="bottom" data-align="start"><div class="tooltip-preview__bubble">This is the tooltip body text and it can span across multiple lines</div><span class="tooltip-preview__arrow"><img src="/assets/tooltip-arrow-top.svg" alt="" /></span></div>
+      <span class="tooltip-placement__label">Bottom start</span>
+    </li>
+    <li class="tooltip-placement">
+      <div class="tooltip-preview" data-side="bottom" data-align="center"><div class="tooltip-preview__bubble">This is the tooltip body text and it can span across multiple lines</div><span class="tooltip-preview__arrow"><img src="/assets/tooltip-arrow-top.svg" alt="" /></span></div>
+      <span class="tooltip-placement__label">Bottom center</span>
+    </li>
+    <li class="tooltip-placement">
+      <div class="tooltip-preview" data-side="bottom" data-align="end"><div class="tooltip-preview__bubble">This is the tooltip body text and it can span across multiple lines</div><span class="tooltip-preview__arrow"><img src="/assets/tooltip-arrow-top.svg" alt="" /></span></div>
+      <span class="tooltip-placement__label">Bottom end</span>
+    </li>
+    <li class="tooltip-placement">
+      <div class="tooltip-preview" data-side="left" data-align="start"><div class="tooltip-preview__bubble">This is the tooltip body text and it can span across multiple lines</div><span class="tooltip-preview__arrow"><img src="/assets/tooltip-arrow-right.svg" alt="" /></span></div>
+      <span class="tooltip-placement__label">Left start</span>
+    </li>
+    <li class="tooltip-placement">
+      <div class="tooltip-preview" data-side="left" data-align="center"><div class="tooltip-preview__bubble">This is the tooltip body text and it can span across multiple lines</div><span class="tooltip-preview__arrow"><img src="/assets/tooltip-arrow-right.svg" alt="" /></span></div>
+      <span class="tooltip-placement__label">Left center</span>
+    </li>
+    <li class="tooltip-placement">
+      <div class="tooltip-preview" data-side="left" data-align="end"><div class="tooltip-preview__bubble">This is the tooltip body text and it can span across multiple lines</div><span class="tooltip-preview__arrow"><img src="/assets/tooltip-arrow-right.svg" alt="" /></span></div>
+      <span class="tooltip-placement__label">Left end</span>
+    </li>
+    <li class="tooltip-placement">
+      <div class="tooltip-preview" data-side="right" data-align="start"><div class="tooltip-preview__bubble">This is the tooltip body text and it can span across multiple lines</div><span class="tooltip-preview__arrow"><img src="/assets/tooltip-arrow-left.svg" alt="" /></span></div>
+      <span class="tooltip-placement__label">Right start</span>
+    </li>
+    <li class="tooltip-placement">
+      <div class="tooltip-preview" data-side="right" data-align="center"><div class="tooltip-preview__bubble">This is the tooltip body text and it can span across multiple lines</div><span class="tooltip-preview__arrow"><img src="/assets/tooltip-arrow-left.svg" alt="" /></span></div>
+      <span class="tooltip-placement__label">Right center</span>
+    </li>
+    <li class="tooltip-placement">
+      <div class="tooltip-preview" data-side="right" data-align="end"><div class="tooltip-preview__bubble">This is the tooltip body text and it can span across multiple lines</div><span class="tooltip-preview__arrow"><img src="/assets/tooltip-arrow-left.svg" alt="" /></span></div>
+      <span class="tooltip-placement__label">Right end</span>
+    </li>
+  </ul>
+</demo>
+
+<demo title="Blur reveal" description="The tooltip sharpens from blur to clear when shown.">
+  <div class="tooltip-interactive">
+    <button class="tooltip-trigger" id="tooltip-blur-trigger" type="button" aria-describedby="tooltip-blur" data-tooltip-trigger>Hover or focus me</button>
+    <div class="tooltip-live" id="tooltip-blur" role="tooltip" data-animation="blur" hidden>
+      <span>This is the tooltip body text and it can span across multiple lines</span>
+      <span class="tooltip-live__arrow" data-popper-arrow><img src="/assets/tooltip-arrow-bottom.svg" alt="" /></span>
+    </div>
+  </div>
+</demo>
+
+<demo title="Interactive tooltip" description="Hover or focus the button to show its tooltip. Press Escape to dismiss it.">
+  <div class="tooltip-interactive">
+    <button class="tooltip-trigger" id="tooltip-trigger" type="button" aria-describedby="tooltip-live" data-tooltip-trigger>Hover or focus me</button>
+    <div class="tooltip-live" id="tooltip-live" role="tooltip" hidden>
+      <span>This is the tooltip body text and it can span across multiple lines</span>
+      <span class="tooltip-live__arrow" data-popper-arrow><img src="/assets/tooltip-arrow-bottom.svg" alt="" /></span>
+    </div>
+  </div>
+</demo>
+
+<script type="module" src="./main.js"></script>
