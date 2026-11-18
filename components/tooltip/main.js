@@ -7,7 +7,7 @@ document.querySelectorAll("[data-tooltip-trigger]").forEach((trigger) => {
   if (!tooltip) return;
 
   const popper = createPopper(trigger, tooltip, {
-    placement: "top-start",
+    placement: trigger.dataset.tooltipPlacement ?? "top-start",
     modifiers: [
       { name: "offset", options: { offset: [0, 8] } },
       { name: "arrow", options: { element: tooltip.querySelector("[data-popper-arrow]") } },

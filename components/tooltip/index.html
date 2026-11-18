@@ -98,13 +98,27 @@
 </demo>
 
 <demo title="Interactive tooltip" description="Hover or focus the button to show its tooltip. Press Escape to dismiss it.">
-  <div class="tooltip-interactive">
-    <button class="tooltip-trigger" id="tooltip-trigger" type="button" aria-describedby="tooltip-live" data-tooltip-trigger>Hover or focus me</button>
-    <div class="tooltip-live" id="tooltip-live" role="tooltip" hidden>
-      <span>This is the tooltip body text and it can span across multiple lines</span>
-      <span class="tooltip-live__arrow" data-popper-arrow><img src="/assets/tooltip-arrow-bottom.svg" alt="" /></span>
+  <fieldset class="tooltip-interactive__fieldset">
+    <legend>Tooltip orientations</legend>
+    <div class="tooltip-interactive__orientations">
+    <div class="tooltip-interactive tooltip-interactive--orientation" data-orientation="top">
+      <button class="tooltip-trigger" type="button" aria-describedby="tooltip-top" data-tooltip-trigger data-tooltip-placement="top">Top</button>
+      <div class="tooltip-live" id="tooltip-top" role="tooltip" hidden><span>Above the trigger</span><span class="tooltip-live__arrow" data-popper-arrow><img src="/assets/tooltip-arrow-bottom.svg" alt="" /></span></div>
     </div>
-  </div>
+    <div class="tooltip-interactive tooltip-interactive--orientation" data-orientation="right">
+      <button class="tooltip-trigger" type="button" aria-describedby="tooltip-right" data-tooltip-trigger data-tooltip-placement="right">Right</button>
+      <div class="tooltip-live" id="tooltip-right" role="tooltip" hidden><span>To the right</span><span class="tooltip-live__arrow" data-popper-arrow><img src="/assets/tooltip-arrow-left.svg" alt="" /></span></div>
+    </div>
+    <div class="tooltip-interactive tooltip-interactive--orientation" data-orientation="bottom">
+      <button class="tooltip-trigger" type="button" aria-describedby="tooltip-bottom" data-tooltip-trigger data-tooltip-placement="bottom">Bottom</button>
+      <div class="tooltip-live" id="tooltip-bottom" role="tooltip" hidden><span>Below the trigger</span><span class="tooltip-live__arrow" data-popper-arrow><img src="/assets/tooltip-arrow-top.svg" alt="" /></span></div>
+    </div>
+    <div class="tooltip-interactive tooltip-interactive--orientation" data-orientation="left">
+      <button class="tooltip-trigger" type="button" aria-describedby="tooltip-left" data-tooltip-trigger data-tooltip-placement="left">Left</button>
+      <div class="tooltip-live" id="tooltip-left" role="tooltip" hidden><span>To the left</span><span class="tooltip-live__arrow" data-popper-arrow><img src="/assets/tooltip-arrow-right.svg" alt="" /></span></div>
+    </div>
+    </div>
+  </fieldset>
 </demo>
 
 <script type="module" src="./main.js"></script>
